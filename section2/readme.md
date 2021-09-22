@@ -58,10 +58,25 @@
     * 了解前端后端分离
     * 学会查看接口文档
     * 发起ajax请求的步骤
-         1. 创建一个异步请求对象
+        > 必须通过服务器发起请求
+        1. 创建一个异步请求对象
+            ```js
+                const xhr = new XMLHttpRequest()
+            ```
         2. 设置请求参数，建立与服务器连接
+            ```js
+                xhr.open('get','url',true)
+            ```
         3. 向服务器发送请求
+            ```js
+                xhr.send()
+            ```
         4. 处理服务器响应数据
+            ```js
+                xhr.onload = function(){
+                    // 在这里通过xhr.responseText获取
+                }
+            ```
         
     * 处理数据，并生产html结构
 
@@ -70,7 +85,29 @@
     ```bash
         # 安装
         npm install -g http-server
+
+        # 安装完成后通过http-server启动服务器
+        http-server
+
+        # 启动一个默认端口为8080的服务器
+        # 接口服务器支持8080,8081,3000
+        # 可以通过http://localhost:8080或http://127.0.0.1:8080访问
+        # 如果想访问别人的电脑，必须知道对方的ip地址
     ```
+
+* 同步与异步
+    * 同步操作
+        > 阻塞
+    * 异步操作
+        * setTimeout
+        * setInterval
+        * ajax
+        * ...
+* 请求传参
+    * get: `?username=laoxie`
 
 ### 练习
 * 请求接口数据，并渲染到页面
+* 根据分类请求相应商品数据
+* 点击商品进入详情页并展示商品效果
+
